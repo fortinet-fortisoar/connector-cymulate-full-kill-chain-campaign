@@ -1,0 +1,721 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "63b010f3-c805-4baf-bfd8-2e6b9e260096",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Cymulate Full Kill Chain Campaign - CART - 1.0.0",
+      "description": "Cymulate Continuous Automated Red Teaming (CART) validates security controls and responses against real-world cyber attacks to stress-test defenses and identify gaps and does network pen testing, phishing awareness, real world cyber attacks. Users can use this connector to perform automated operations for managing Full Kill-Chain Campaign module data in your Cymulate account",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Cymulate",
+        "cymulate-full-kill-chain-campaign"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "a72c203f-ffe0-413e-aaae-d3c72bbe4c74",
+          "collection": "/api/3/workflow_collections/63b010f3-c805-4baf-bfd8-2e6b9e260096",
+          "triggerLimit": null,
+          "description": "Retrieve the latest Full Kill-Chain Campaign report results (overview) by the environment ID",
+          "name": "Get Campaign Report",
+          "tag": "#Cymulate-CART",
+          "recordTags": [
+            "Cymulate",
+            "cymulate-cart"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/38255ee6-c163-4b74-a91e-d8d8b392e4f6",
+          "steps": [
+            {
+              "uuid": "38255ee6-c163-4b74-a91e-d8d8b392e4f6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "95ce0c16-ea22-4c15-a98b-5d9358895d7e",
+                "title": "Cymulate Full Kill Chain Campaign - CART: Get Campaign Report",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "7680c22c-3bd5-46e2-ac06-dba82c106983",
+              "@type": "WorkflowStep",
+              "name": "Get Campaign Report",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cymulate Full Kill Chain Campaign - CART",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cymulate-full-kill-chain-campaign",
+                "operation": "get_campaign_report",
+                "operationTitle": "Get Campaign Report",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "39a0b615-1fcb-4e07-812f-0fbe3504ee03",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Campaign Report",
+              "sourceStep": "/api/3/workflow_steps/38255ee6-c163-4b74-a91e-d8d8b392e4f6",
+              "targetStep": "/api/3/workflow_steps/7680c22c-3bd5-46e2-ac06-dba82c106983"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "33bff9a3-0310-4a99-aeaa-f74ba15f1668",
+          "collection": "/api/3/workflow_collections/63b010f3-c805-4baf-bfd8-2e6b9e260096",
+          "triggerLimit": null,
+          "description": "Retrieve a list of IDs for the latest Full Kill-Chain Campaign assessments.",
+          "name": "Get Campaign Assessments IDs",
+          "tag": "#Cymulate-CART",
+          "recordTags": [
+            "Cymulate",
+            "cymulate-cart"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f373449a-f759-41a6-b2ec-e71ef451c7b1",
+          "steps": [
+            {
+              "uuid": "f373449a-f759-41a6-b2ec-e71ef451c7b1",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "83b6bd69-ec29-43d8-838a-f08ceea52c4b",
+                "title": "Cymulate Full Kill Chain Campaign - CART: Get Campaign Assessments IDs",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "dc470f8c-4a70-497a-9257-b76ccadfa94b",
+              "@type": "WorkflowStep",
+              "name": "Get Campaign Assessments IDs",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cymulate Full Kill Chain Campaign - CART",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cymulate-full-kill-chain-campaign",
+                "operation": "get_campaign_assessments_ids",
+                "operationTitle": "Get Campaign Assessments IDs",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "0e166d8e-28c0-4b8f-8bae-bf4c485dfed2",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Campaign Assessments IDs",
+              "sourceStep": "/api/3/workflow_steps/f373449a-f759-41a6-b2ec-e71ef451c7b1",
+              "targetStep": "/api/3/workflow_steps/dc470f8c-4a70-497a-9257-b76ccadfa94b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "c8685647-c650-4b74-bf41-ce95f4075a5d",
+          "collection": "/api/3/workflow_collections/63b010f3-c805-4baf-bfd8-2e6b9e260096",
+          "triggerLimit": null,
+          "description": "Retrieve Full Kill-Chain Campaign technical report results for a specific assessment",
+          "name": "Get Technical Report for Specific Assessment",
+          "tag": "#Cymulate-CART",
+          "recordTags": [
+            "Cymulate",
+            "cymulate-cart"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/23fa4a19-c51f-4443-bf55-4b89b4c042f6",
+          "steps": [
+            {
+              "uuid": "23fa4a19-c51f-4443-bf55-4b89b4c042f6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "31db6d30-f154-4cc9-8398-4f924ac9c200",
+                "title": "Cymulate Full Kill Chain Campaign - CART: Get Technical Report for Specific Assessment",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ec1559c5-5bdf-4eba-87b4-c8596cb7ba2a",
+              "@type": "WorkflowStep",
+              "name": "Get Technical Report for Specific Assessment",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cymulate Full Kill Chain Campaign - CART",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cymulate-full-kill-chain-campaign",
+                "operation": "get_technical_report_for_specific_assessment",
+                "operationTitle": "Get Technical Report for Specific Assessment",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "3d89a9df-1faa-46ed-835a-2595048d829a",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Technical Report for Specific Assessment",
+              "sourceStep": "/api/3/workflow_steps/23fa4a19-c51f-4443-bf55-4b89b4c042f6",
+              "targetStep": "/api/3/workflow_steps/ec1559c5-5bdf-4eba-87b4-c8596cb7ba2a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9d4bb1b6-71da-4923-9f6b-966c50669d31",
+          "collection": "/api/3/workflow_collections/63b010f3-c805-4baf-bfd8-2e6b9e260096",
+          "triggerLimit": null,
+          "description": "Launch a Full Kill-Chain Campaign assessment with the specified input parameter values",
+          "name": "Launch Campaign Assessment",
+          "tag": "#Cymulate-CART",
+          "recordTags": [
+            "Cymulate",
+            "cymulate-cart"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/df34b870-6568-4985-a238-81cacc76e199",
+          "steps": [
+            {
+              "uuid": "df34b870-6568-4985-a238-81cacc76e199",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "ae1e51b9-3cdf-42d0-b44a-0986f1d92595",
+                "title": "Cymulate Full Kill Chain Campaign - CART: Launch Campaign Assessment",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "6b3954a9-1654-48e7-a76b-4969eb872021",
+              "@type": "WorkflowStep",
+              "name": "Launch Campaign Assessment",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cymulate Full Kill Chain Campaign - CART",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cymulate-full-kill-chain-campaign",
+                "operation": "launch_campaign_assessment",
+                "operationTitle": "Launch Campaign Assessment",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "37639382-aa4c-4afb-b939-585417d5576e",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Launch Campaign Assessment",
+              "sourceStep": "/api/3/workflow_steps/df34b870-6568-4985-a238-81cacc76e199",
+              "targetStep": "/api/3/workflow_steps/6b3954a9-1654-48e7-a76b-4969eb872021"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "bb439f6a-97f9-4725-a60b-e1dc2553f488",
+          "collection": "/api/3/workflow_collections/63b010f3-c805-4baf-bfd8-2e6b9e260096",
+          "triggerLimit": null,
+          "description": "Stop a Full Kill-Chain Campaign assessment that is currently running",
+          "name": "Stop Campaign Assessment",
+          "tag": "#Cymulate-CART",
+          "recordTags": [
+            "Cymulate",
+            "cymulate-cart"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7ac665c3-9d9f-4d17-a0ab-854652953c43",
+          "steps": [
+            {
+              "uuid": "7ac665c3-9d9f-4d17-a0ab-854652953c43",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "d8fefec6-46d6-4f5a-921a-dd1c2fef85c2",
+                "title": "Cymulate Full Kill Chain Campaign - CART: Stop Campaign Assessment",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a4914932-c3b3-423e-bbf6-c00354ce179d",
+              "@type": "WorkflowStep",
+              "name": "Stop Campaign Assessment",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cymulate Full Kill Chain Campaign - CART",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cymulate-full-kill-chain-campaign",
+                "operation": "stop_campaign_assessment",
+                "operationTitle": "Stop Campaign Assessment",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "18526948-953e-48e0-954a-4a16cbf584f4",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Stop Campaign Assessment",
+              "sourceStep": "/api/3/workflow_steps/7ac665c3-9d9f-4d17-a0ab-854652953c43",
+              "targetStep": "/api/3/workflow_steps/a4914932-c3b3-423e-bbf6-c00354ce179d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "02fd904e-3500-4eec-b51f-6d2f8e046dbc",
+          "collection": "/api/3/workflow_collections/63b010f3-c805-4baf-bfd8-2e6b9e260096",
+          "triggerLimit": null,
+          "description": "Retrieve the Full Kill-Chain Campaign assessment history within the date range",
+          "name": "Get Campaign Assessment History",
+          "tag": "#Cymulate-CART",
+          "recordTags": [
+            "Cymulate",
+            "cymulate-cart"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/010c064b-328a-4661-8e26-76d7073614a7",
+          "steps": [
+            {
+              "uuid": "010c064b-328a-4661-8e26-76d7073614a7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "ad1ada3c-f433-4fba-b932-3e16b0797a4f",
+                "title": "Cymulate Full Kill Chain Campaign - CART: Get Campaign Assessment History",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "bbc42d29-12e9-4331-b601-9553e70d4a58",
+              "@type": "WorkflowStep",
+              "name": "Get Campaign Assessment History",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cymulate Full Kill Chain Campaign - CART",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cymulate-full-kill-chain-campaign",
+                "operation": "get_campaign_assessment_history",
+                "operationTitle": "Get Campaign Assessment History",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "0725728a-cc9f-4acb-b894-196e74db2406",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Campaign Assessment History",
+              "sourceStep": "/api/3/workflow_steps/010c064b-328a-4661-8e26-76d7073614a7",
+              "targetStep": "/api/3/workflow_steps/bbc42d29-12e9-4331-b601-9553e70d4a58"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "7ffc80d9-ce22-4edd-880e-6101715113cf",
+          "collection": "/api/3/workflow_collections/63b010f3-c805-4baf-bfd8-2e6b9e260096",
+          "triggerLimit": null,
+          "description": "Retrieve Full Kill-Chain Campaign report results for a specific assessment",
+          "name": "Get Specific Campaign Assessment Report",
+          "tag": "#Cymulate-CART",
+          "recordTags": [
+            "Cymulate",
+            "cymulate-cart"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/cb0746c3-3198-4f33-9791-a7e0bee45d1f",
+          "steps": [
+            {
+              "uuid": "cb0746c3-3198-4f33-9791-a7e0bee45d1f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "1748b20d-202b-4fa6-b0ff-cd7e604dfdd8",
+                "title": "Cymulate Full Kill Chain Campaign - CART: Get Specific Campaign Assessment Report",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4436e5ae-c211-488d-8e59-5ed72f5cb8a2",
+              "@type": "WorkflowStep",
+              "name": "Get Specific Campaign Assessment Report",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cymulate Full Kill Chain Campaign - CART",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cymulate-full-kill-chain-campaign",
+                "operation": "get_specific_campaign_assessment_report",
+                "operationTitle": "Get Specific Campaign Assessment Report",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "589af654-135a-4c3a-8275-40276ee374e3",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Specific Campaign Assessment Report",
+              "sourceStep": "/api/3/workflow_steps/cb0746c3-3198-4f33-9791-a7e0bee45d1f",
+              "targetStep": "/api/3/workflow_steps/4436e5ae-c211-488d-8e59-5ed72f5cb8a2"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a2a6fc76-f57b-4d68-9eb6-4b88e4313d00",
+          "collection": "/api/3/workflow_collections/63b010f3-c805-4baf-bfd8-2e6b9e260096",
+          "triggerLimit": null,
+          "description": "Retrieve a Full Kill-Chain Campaign assessment status by the assessment ID",
+          "name": "Get Campaign Assessment Status",
+          "tag": "#Cymulate-CART",
+          "recordTags": [
+            "Cymulate",
+            "cymulate-cart"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/24851ad2-dfb9-4d4c-8e2f-c250024bf098",
+          "steps": [
+            {
+              "uuid": "24851ad2-dfb9-4d4c-8e2f-c250024bf098",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "b984d223-ebc4-4c12-81a3-805aba79f1e3",
+                "title": "Cymulate Full Kill Chain Campaign - CART: Get Campaign Assessment Status",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "7015f57f-46c1-4299-aecc-d4b45d9b9d27",
+              "@type": "WorkflowStep",
+              "name": "Get Campaign Assessment Status",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cymulate Full Kill Chain Campaign - CART",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cymulate-full-kill-chain-campaign",
+                "operation": "get_campaign_assessment_status",
+                "operationTitle": "Get Campaign Assessment Status",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "d31e66bf-661d-4969-959b-7743667c5cd2",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Campaign Assessment Status",
+              "sourceStep": "/api/3/workflow_steps/24851ad2-dfb9-4d4c-8e2f-c250024bf098",
+              "targetStep": "/api/3/workflow_steps/7015f57f-46c1-4299-aecc-d4b45d9b9d27"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "1d1258d9-5330-426b-9efa-de932ad0606c",
+          "collection": "/api/3/workflow_collections/63b010f3-c805-4baf-bfd8-2e6b9e260096",
+          "triggerLimit": null,
+          "description": "Retrieve a list of available Full Kill-Chain Campaign templates",
+          "name": "Get Campaign Templates",
+          "tag": "#Cymulate-CART",
+          "recordTags": [
+            "Cymulate",
+            "cymulate-cart"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/869bbc0d-0d31-4fdd-abcc-8302817dc055",
+          "steps": [
+            {
+              "uuid": "869bbc0d-0d31-4fdd-abcc-8302817dc055",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "144b2145-131f-4c56-989b-0c228d42aa6e",
+                "title": "Cymulate Full Kill Chain Campaign - CART: Get Campaign Templates",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a0cc0313-9c6b-444e-bce6-1b92a3e858d0",
+              "@type": "WorkflowStep",
+              "name": "Get Campaign Templates",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cymulate Full Kill Chain Campaign - CART",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cymulate-full-kill-chain-campaign",
+                "operation": "get_campaign_templates",
+                "operationTitle": "Get Campaign Templates",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "35137513-f1f9-48a4-aeed-4ef923ac26b8",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Campaign Templates",
+              "sourceStep": "/api/3/workflow_steps/869bbc0d-0d31-4fdd-abcc-8302817dc055",
+              "targetStep": "/api/3/workflow_steps/a0cc0313-9c6b-444e-bce6-1b92a3e858d0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

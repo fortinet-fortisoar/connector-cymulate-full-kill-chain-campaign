@@ -1,0 +1,295 @@
+{
+  "name": "cymulate-full-kill-chain-campaign",
+  "label": "Cymulate Full Kill Chain Campaign - CART",
+  "version": "1.0.0",
+  "description": "Cymulate Continuous Automated Red Teaming (CART) validates security controls and responses against real-world cyber attacks to stress-test defenses and identify gaps and does network pen testing, phishing awareness, real world cyber attacks. Users can use this connector to perform automated operations for managing Full Kill-Chain Campaign module data in your Cymulate account",
+  "category": "Breach and Attack Simulation",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-cymulate-full-kill-chain-campaign/blob/release/1.0.0/docs/cymulate-full-kill-chain-campaign.md",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "description": "Specify the Cymulate API server URL to connect and perform the automated operations.",
+        "tooltip": "Specify the Cymulate API server URL to connect and perform the automated operations.",
+        "type": "text",
+        "editable": true,
+        "visible": true,
+        "required": true,
+        "placeholder": "https://api.app.cymulate.com",
+        "value": "https://api.app.cymulate.com"
+      },
+      {
+        "name": "apiKey",
+        "title": "API Key",
+        "type": "password",
+        "editable": true,
+        "visible": true,
+        "required": true,
+        "tooltip": "Specify the Secret Key of the API Application already created in the Cymulate Server.",
+        "description": "Specify the Secret Key of the API Application already created in the Cymulate Server."
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Get Campaign Report",
+      "operation": "get_campaign_report",
+      "description": "Retrieve the latest Full Kill-Chain Campaign report results (overview) by the environment ID",
+      "category": "investigation",
+      "annotation": "get_campaign_report",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Environment ID",
+          "name": "env",
+          "type": "text",
+          "tooltip": "Specify the environment ID. If an ID is not provided, the request will return latest report results for the Default environment.",
+          "description": "Specify the environment ID. If an ID is not provided, the request will return latest report results for the Default environment.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Campaign Assessments IDs",
+      "operation": "get_campaign_assessments_ids",
+      "description": "Retrieve a list of IDs for the latest Full Kill-Chain Campaign assessments.",
+      "category": "investigation",
+      "annotation": "get_campaign_assessments_ids",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Environment ID",
+          "name": "env",
+          "type": "text",
+          "tooltip": "Specify the environment ID. If an ID is not provided, the request will return latest data for the Default environment",
+          "description": "Specify the environment ID. If an ID is not provided, the request will return return latest data for the Default environment",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Technical Report for Specific Assessment",
+      "operation": "get_technical_report_for_specific_assessment",
+      "description": "Retrieve Full Kill-Chain Campaign technical report results for a specific assessment",
+      "category": "investigation",
+      "annotation": "get_technical_report_for_specific_assessment",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Assessment ID",
+          "name": "assessment_id",
+          "type": "text",
+          "tooltip": "Provide an ID for the assessment you want to receive a technical report",
+          "description": "Provide an ID for the assessment you want to receive a technical report",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Launch Campaign Assessment",
+      "operation": "launch_campaign_assessment",
+      "description": "Launch a Full Kill-Chain Campaign assessment with the specified input parameter values",
+      "category": "investigation",
+      "annotation": "launch_campaign_assessment",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Template ID",
+          "name": "templateID",
+          "type": "text",
+          "tooltip": "Provide the Template ID for the assessment you wish to launch",
+          "description": "Provide the Template ID for the assessment you wish to launch",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Schedule Time",
+          "name": "schedule",
+          "type": "datetime",
+          "tooltip": "Specify the time to launch the Campaign Assessment",
+          "description": "Specify the time to launch the Campaign Assessment",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Schedule Loop",
+          "name": "scheduleLoop",
+          "type": "Select",
+          "tooltip": "Select the loop size of the schedule",
+          "description": "Select the loop size of the schedule",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": ["One Time","Daily","Weekly","Monthly"]
+
+        }
+
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Stop Campaign Assessment",
+      "operation": "stop_campaign_assessment",
+      "description": "Stop a Full Kill-Chain Campaign assessment that is currently running",
+      "category": "investigation",
+      "annotation": "stop_campaign_assessment",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Environment ID",
+          "name": "env",
+          "type": "text",
+          "tooltip": "The environment ID. If an ID is not provided, the most recently launched assessment will be stopped",
+          "description": "The environment ID. If an ID is not provided, the most recently launched assessment will be stopped",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Campaign Assessment History",
+      "operation": "get_campaign_assessment_history",
+      "description": "Retrieve the Full Kill-Chain Campaign assessment history within the date range",
+      "category": "investigation",
+      "annotation": "get_campaign_assessment_history",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Environment ID",
+          "name": "env",
+          "type": "text",
+          "tooltip": "The environment ID. If an ID is not provided, the most recently launched assessment will be stopped",
+          "description": "The environment ID. If an ID is not provided, the most recently launched assessment will be stopped",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "From Date",
+          "name": "fromDate",
+          "type": "datetime",
+          "tooltip": "Specify the date for Full Kill-Chain Campaign assessments from this date",
+          "description": "Specify the date for Full Kill-Chain Campaign assessments from this date",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "To Date",
+          "name": "toDate",
+          "type": "text",
+          "tooltip": "Specify the date for Full Kill-Chain Campaign assessments until this date",
+          "description": "Specify the date for Full Kill-Chain Campaign assessments until this date",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Specific Campaign Assessment Report",
+      "operation": "get_specific_campaign_assessment_report",
+      "description": "Retrieve Full Kill-Chain Campaign report results for a specific assessment",
+      "category": "investigation",
+      "annotation": "get_specific_campaign_assessment_report",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Assessment ID",
+          "name": "id",
+          "type": "text",
+          "tooltip": "Specify the ID of the assessment for which you want to obtain a specific assessment report",
+          "description": "Specify the ID of the assessment for which you want to obtain a specific assessment report",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Index",
+          "name": "skip",
+          "type": "text",
+          "tooltip": "Specify the index of the first item in the returned list.",
+          "description": "Specify the index of the first item in the returned list.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "text",
+          "tooltip": "Specify the limit for the number of items to return in the result",
+          "description": "Specify the limit for the number of items to return in the result",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Campaign Assessment Status",
+      "operation": "get_campaign_assessment_status",
+      "description": "Retrieve a Full Kill-Chain Campaign assessment status by the assessment ID",
+      "category": "investigation",
+      "annotation": "get_campaign_assessment_status",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Assessment ID",
+          "name": "id",
+          "type": "text",
+          "tooltip": "Specify the assessment ID. If an ID is not provided, the request will return the latest run assessment",
+          "description": "Specify the assessment ID. If an ID is not provided, the request will return the latest run assessment",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Campaign Templates",
+      "operation": "get_campaign_templates",
+      "description": "Retrieve a list of available Full Kill-Chain Campaign templates",
+      "category": "investigation",
+      "annotation": "get_campaign_templates",
+      "output_schema": {},
+      "parameters": [
+      ],
+      "enabled": true
+    }
+  ]
+}
+

@@ -1,6 +1,7 @@
 ## About the connector
 Cymulate Continuous Automated Red Teaming (CART) validates security controls and responses against real-world cyber attacks to stress-test defenses and identify gaps and does network pen testing, phishing awareness, real world cyber attacks. Users can use this connector to perform automated operations for managing Full Kill-Chain Campaign module data in your Cymulate account
 <p>This document provides information about the Cymulate Full Kill Chain Campaign - CART Connector, which facilitates automated interactions, with a Cymulate Full Kill Chain Campaign - CART server using FortiSOAR&trade; playbooks. Add the Cymulate Full Kill Chain Campaign - CART Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with Cymulate Full Kill Chain Campaign - CART.</p>
+
 ### Version information
 
 Connector Version: 1.0.0
@@ -28,6 +29,7 @@ For the procedure to configure a connector, click [here](https://docs.fortinet.c
 </tr><tr><td>API Key</td><td>Specify the Secret Key of the API Application already created in the Cymulate Server.</td>
 </tr><tr><td>Verify SSL</td><td>Specifies whether the SSL certificate for the server is to be verified or not. <br/>By default, this option is set to True.</td></tr>
 </tbody></table>
+
 ## Actions supported by the connector
 The following automated operations can be included in playbooks and you can also use the annotations to access operations:
 <table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get Campaign Report</td><td>Retrieve the latest Full Kill-Chain Campaign report results (overview) by the environment ID</td><td>get_campaign_report <br/>Investigation</td></tr>
@@ -40,10 +42,13 @@ The following automated operations can be included in playbooks and you can also
 <tr><td>Get Campaign Assessment Status</td><td>Retrieve a Full Kill-Chain Campaign assessment status by the assessment ID</td><td>get_campaign_assessment_status <br/>Investigation</td></tr>
 <tr><td>Get Campaign Templates</td><td>Retrieve a list of available Full Kill-Chain Campaign templates</td><td>get_campaign_templates <br/>Investigation</td></tr>
 </tbody></table>
+
 ### operation: Get Campaign Report
+
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Environment ID</td><td>Specify the environment ID. If an ID is not provided, the request will return latest report results for the Default environment.
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -51,6 +56,7 @@ The following automated operations can be included in playbooks and you can also
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Environment ID</td><td>Specify the environment ID. If an ID is not provided, the request will return return latest data for the Default environment
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -58,6 +64,7 @@ The following automated operations can be included in playbooks and you can also
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Assessment ID</td><td>Provide an ID for the assessment you want to receive a technical report
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -66,6 +73,7 @@ The following automated operations can be included in playbooks and you can also
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Template ID</td><td>Provide the Template ID for the assessment you wish to launch
 </td></tr><tr><td>Schedule Time</td><td>Specify the time to launch the Campaign Assessment
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -73,6 +81,7 @@ The following automated operations can be included in playbooks and you can also
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Environment ID</td><td>The environment ID. If an ID is not provided, the most recently launched assessment will be stopped
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -82,6 +91,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>From Date</td><td>Specify the date for Full Kill-Chain Campaign assessments from this date
 </td></tr><tr><td>To Date</td><td>Specify the date for Full Kill-Chain Campaign assessments until this date
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -91,6 +101,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Index</td><td>Specify the index of the first item in the returned list.
 </td></tr><tr><td>Limit</td><td>Specify the limit for the number of items to return in the result
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -98,6 +109,7 @@ The following automated operations can be included in playbooks and you can also
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Assessment ID</td><td>Specify the assessment ID. If an ID is not provided, the request will return the latest run assessment
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
@@ -107,6 +119,7 @@ The following automated operations can be included in playbooks and you can also
 </td></tr><tr><td>Index</td><td>Specify the index of the first item in the returned list.
 </td></tr><tr><td>Limit</td><td>Specify the limit for the number of items to return in the result
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
